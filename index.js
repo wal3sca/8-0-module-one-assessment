@@ -29,6 +29,11 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
+
+// TO-DO:
+// loop through all the movie titles and return all titles
+// if the movies array is empty, return an empty array
+
 function getAllMovieTitles(movies) {
 
 let titlesArray = []
@@ -42,10 +47,7 @@ for(let i = 0; i < movies.length; i++){
 return titlesArray
 }
 
-// TO-DO:
-// loop through all the movie titles and return all titles
-// if the movies array is empty, return an empty array
-// 
+
 
 /**
  * getHighestMetascore()
@@ -58,17 +60,24 @@ return titlesArray
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {
-  let num = highest
-for(let i = 0; i < movies.length; i++){
-  highest.push(movies[i].metascore)
-}
-return num
-}
 
-// TO-DO
-// loop through the metascores of all of the movies and return the highest metascore
+
+// TO-DO:
+// we are returning a number
+// loop through the metascores of all of the movies
 // return the number 0 if the movies array is empty
+
+function getHighestMetascore(movies) {
+  let highest = 0
+  
+for(let i = 0; i < movies.length; i++){
+  let num = Number(movies[i].metascore)
+  if(num > highest){
+    highest = num
+  }
+}
+return highest
+}
 
 
 /**
@@ -82,7 +91,29 @@ return num
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+
+// TO-DO:
+// [x] create loop to get the imdbRating
+// [x] turn the imdbRating from a string into a number
+// [x] add all of the imdbRatings - movies[i].imdbRating
+// [x] divide the amount of IMDB
+function getAverageIMDBRating(movies) {
+
+  let number = 0
+
+  if(!movies.length){
+    return number
+  }
+
+  for(let i = 0; i < movies.length; i++){
+    let num = Number(movies[i].imdbRating)
+    number = number + num
+    }
+    number = number / movies.length
+
+  return number
+  }
+
 
 /**
  * countByRating()
