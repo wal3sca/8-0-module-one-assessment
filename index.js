@@ -128,24 +128,31 @@ function getAverageIMDBRating(movies) {
  */
 
 // TO-DO:
-// [] loop through each object in the array
+// [x] loop through each object in the array
 // [] return an object with a key:value
 // [] key = movie rating (G or PG)
 // [] value = number of movies in the array with that same key rating
 // example: PG (rating) : 7 (7 movies in the array have a PG rating)
 // [] if the array is empty, return an empty object{}
 function countByRating(movies) {
-  let obj = {}
-  
-  for(let i = 0; i < movies.length; i++){
-    let keys = ratings
-    let values = "value" + i;
-    obj[keys] = movies[i];
-    // obj[keys[i]] = values[i];
+  let obj = {};
+  // let accumulator = {};
+    
+  for (let rating of ratings) {
+    obj[rating] = '';
+      }
+    
+      // Second accumulator pattern starts here!
+      // let result = [];
+    
+      // for (let key in obj) {
+      //   result.push(Number(key));
+      // }
+    
+      return obj;
     }
+  
 
-    return obj
-  }
 
 /**
  * findById()
