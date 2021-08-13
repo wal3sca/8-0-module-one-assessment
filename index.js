@@ -31,8 +31,8 @@ const exampleMovies = require("./movies");
  */
 
 // TO-DO:
-// loop through all the movie titles and return all titles
-// if the movies array is empty, return an empty array
+// [x] loop through all the movie titles and return all titles
+// [x] if the movies array is empty, return an empty array
 
 function getAllMovieTitles(movies) {
 
@@ -63,9 +63,9 @@ return titlesArray
 
 
 // TO-DO:
-// we are returning a number
-// loop through the metascores of all of the movies
-// return the number 0 if the movies array is empty
+// [x] we are returning a number
+// [x] loop through the metascores of all of the movies
+// [x] return the number 0 if the movies array is empty
 
 function getHighestMetascore(movies) {
   let highest = 0
@@ -126,7 +126,26 @@ function getAverageIMDBRating(movies) {
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+
+// TO-DO:
+// [] loop through each object in the array
+// [] return an object with a key:value
+// [] key = movie rating (G or PG)
+// [] value = number of movies in the array with that same key rating
+// example: PG (rating) : 7 (7 movies in the array have a PG rating)
+// [] if the array is empty, return an empty object{}
+function countByRating(movies) {
+  let obj = {}
+  
+  for(let i = 0; i < movies.length; i++){
+    let keys = ratings
+    let values = "value" + i;
+    obj[keys] = movies[i];
+    // obj[keys[i]] = values[i];
+    }
+
+    return obj
+  }
 
 /**
  * findById()
@@ -142,7 +161,14 @@ function countByRating() {}
       // Toy Story 4
     };
  */
-function findById() {}
+
+// TO-DO
+// 
+function findById(movies, id) {
+
+
+  return object
+}
 
 /**
  * filterByGenre()
