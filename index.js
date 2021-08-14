@@ -134,24 +134,25 @@ function getAverageIMDBRating(movies) {
 // [] value = number of movies in the array with that same key rating
 // example: PG (rating) : 7 (7 movies in the array have a PG rating)
 // [] if the array is empty, return an empty object{}
+// {G: 1}
+// object.key = value
+// object[key] = value
 function countByRating(movies) {
   let obj = {};
   // let accumulator = {};
     
-  for (let rating of ratings) {
-    obj[rating] = '';
-      }
+  for (let movie of movies) {
+   let ratedLetter = movie.rated
+   if(!obj[ratedLetter]){
+   obj[ratedLetter] = 1
+   }else if(obj[ratedLetter]){
+     obj[ratedLetter] += 1
+   }
+  }
+
+  return obj;
+ }
     
-      // Second accumulator pattern starts here!
-      // let result = [];
-    
-      // for (let key in obj) {
-      //   result.push(Number(key));
-      // }
-    
-      return obj;
-    }
-  
 
 
 /**
@@ -170,9 +171,18 @@ function countByRating(movies) {
  */
 
 // TO-DO
-// 
+// return movie object by imdbID from the array
+// return null if movie array is empty
+// return null if ID does not match any movie
 function findById(movies, id) {
+  let object = {}
 
+  for(let i = 0; i < movies[i].length; i++){
+  let movies = movie[i].imdbID
+  }
+    if(!movie[i].imdbID){
+      return null
+    }
 
   return object
 }
@@ -197,7 +207,7 @@ function findById(movies, id) {
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre(movies, genre) {}
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
@@ -221,7 +231,7 @@ function filterByGenre() {}
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {}
 
 /**
  * getBiggestBoxOfficeMovie()
@@ -234,7 +244,22 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie() {}
+
+// TO-DO:
+// return the NAME of the movie with the highest boxOffice amount
+// what's the name of the movie that made the most money at the box office?
+
+function getBiggestBoxOfficeMovie(movies) {
+//   let highest = 0
+  
+//   for(let i = 0; i < movies.length; i++){
+//     let num = Number(movies[i].name.boxOffice)
+//     if(num > highest){
+//       highest = num
+//     }
+//   }
+//   return highest
+}
 
 // Do not change anything below this line.
 module.exports = {
